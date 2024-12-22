@@ -16,10 +16,14 @@ RUN apt-get update && apt-get install -y \
     libasound2 \
     libpangocairo-1.0-0 \
     libgtk-3-0 \
+    libdrm2 \
+    libgbm1 \
+    libxcb-shm0 \
+    libxkbcommon0 \
     --no-install-recommends && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Crie e use o diretório de trabalho
+# Defina o diretório de trabalho
 WORKDIR /app
 
 # Copie os arquivos do projeto para o container
@@ -29,7 +33,7 @@ COPY index.js ./
 # Instale as dependências do Node.js
 RUN npm install
 
-# Exponha a porta (se necessário para debug ou outros serviços)
+# Exponha a porta que o aplicativo pode usar (se necessário)
 # EXPOSE 3000
 
 # Comando para rodar o bot
