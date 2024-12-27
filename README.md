@@ -10,7 +10,7 @@ Este projeto é um bot que envia uma mensagem de "bom dia" automaticamente para 
    cd whatsapp-bot
 
 2. **Cria imagem**
-  ```bash
+   ```bash
    docker build -t whatsapp-bot .
 
 2. **Execute o container**:
